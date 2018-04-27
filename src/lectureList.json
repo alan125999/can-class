@@ -1,0 +1,89 @@
+[{
+    "name": "FreeBSD + Firewall",
+    "time": [{
+        "year": 2018, 
+        "month": 4,
+        "day": 29, 
+        "hour":2,
+        "minute": 0
+    }, {
+        "year": 2018, 
+        "month": 5,
+        "day": 7, 
+        "hour":22,
+        "minute": 0
+    }, {
+        "year": 2018, 
+        "month": 5,
+        "day": 10, 
+        "hour":18,
+        "minute": 30
+    }],
+    "lecturer": "Alan"
+  }, {
+    "name": "Mail + DNS",
+    "time": [{
+        "year": 2018, 
+        "month": 5,
+        "day": 6, 
+        "hour":14,
+        "minute": 0
+    }, {
+        "year": 2018, 
+        "month": 5,
+        "day": 14, 
+        "hour":22,
+        "minute": 0
+    }, {
+        "year": 2018, 
+        "month": 5,
+        "day": 18, 
+        "hour":18,
+        "minute": 30
+    }],
+    "lecturer": "Setsal"
+  }, {
+    "name": "網頁伺服器架設與PHP+MySQL (一)",
+    "time": [{
+        "year": 2018, 
+        "month": 5,
+        "day": 15, 
+        "hour":22,
+        "minute": 0
+    }, {
+        "year": 2018, 
+        "month": 5,
+        "day": 20, 
+        "hour":22,
+        "minute": 0
+    }, {
+        "year": 2018, 
+        "month": 5,
+        "day": 22, 
+        "hour":18,
+        "minute": 30
+    }],
+    "lecturer": "Anan"
+  }, {
+    "name": "網頁伺服器架設與PHP+MySQL (二)",
+    "time": [{
+        "year": 2018, 
+        "month": 5,
+        "day": 19, 
+        "hour":22,
+        "minute": 0
+    }, {
+        "year": 2018, 
+        "month": 5,
+        "day": 27, 
+        "hour":14,
+        "minute": 0
+    }, {
+        "year": 2018, 
+        "month": 5,
+        "day": 31, 
+        "hour":18,
+        "minute": 30
+    }],
+    "lecturer": "Anan"
+  }]
