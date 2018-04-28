@@ -3,6 +3,3 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-.Cal__Day__root.Cal__Day__selected .Cal__Day__selection.classFinalDays{
-  background-color: #ff6699;
-}

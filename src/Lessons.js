@@ -6,9 +6,11 @@ import InfiniteCalendar, {
   withMultipleDates,
 } from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css'; // Make sure to import the default stylesheet
+import './Lessons.css'
 
 class Lessons extends React.Component {
   paddingLeft(str, length) {
+    str = str.toString();
     if (str.length >= length) return str;
     else return this.paddingLeft("0" + str, length);
   }
@@ -58,7 +60,7 @@ class Lessons extends React.Component {
         key={lesson.id + "," + lesson.order}
       >
         課程：{LectureList[lesson.id].name} <br />
-        性質：{(lesson.isFinal === true ? "正課" : ("第 " + (lesson.order + 1) + " 次驗課"))} <br/>
+        性質：{(lesson.isFinal === true ? "正課" : ("第 " + (lesson.order + 1) + " 次驗課"))} <br />
         講師：{LectureList[lesson.id].lecturer}
       </TimelineEvent>;
     });
@@ -72,15 +74,33 @@ class Lessons extends React.Component {
     return selected;
   }
   renderCalender() {
+    let finalTime = Array(0);
     let time = this.list.map((lesson) => {
+      if (lesson.isFinal) finalTime.push(lesson.time.getFullYear() + '-' + this.paddingLeft((lesson.time.getMonth()+1 ),2)+ '-' + this.paddingLeft(lesson.time.getDate(),2));
       return lesson.time;
     })
-    return(<InfiniteCalendar
-      Component = {withMultipleDates(Calendar)}
-      selected = {time}
+
+    return (<InfiniteCalendar
+      Component={withMultipleDates(Calendar)}
+      selected={time}
       interpolateSelection={this.myMultipleDateInterpolation}
-      width = {600}
-      height = {300}
+      width={600}
+      height={500}
+      className="myCal"
+      min={this.list[0].time}
+      max={this.list[this.list.length - 1].time}
+      minDate={this.list[0].time}
+      maxDate={this.list[this.list.length - 1].time}
+      theme={{
+        selectionColor: date => {
+          let dateObj = date.split('-');
+          dateObj = new Date(dateObj[0], dateObj[1] - 1, dateObj[2]);
+          let now = new Date();
+          if (dateObj < now) return "gray";
+          return this.lessonColor(finalTime.includes(date));
+        },
+        
+      }}
     />);
   };
 }
