@@ -26,3 +26,33 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+}
+
+.timelineContainer{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.timelineTitle{
+  color: white; 
+  font-size: 2em;
+  background-color:rgb(76, 172, 255);
+  margin: 0;
+  height: 147px;
+  line-height: 147px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  .wrapper{
+    display: flex;
+    flex-flow: column wrap;
+  }
+}
+  

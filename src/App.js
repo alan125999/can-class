@@ -21,10 +21,10 @@ class App extends React.Component {
             {Lessons.renderCalender()}
           </section> */}
 
-          <section style={{ display: "-webkit-flex", flexFlow: "row wrap", justifyContent: "center"}}>
+          <section className="wrapper">
             {Lessons.renderCalender()}
-            <div style={{ display: "flex", flexFlow: "column wrap", justifyContent: "flex-start", height: "100%", width: "25%", flexGrow: 1}}>
-              <p style={{ color: "white", fontSize: "2em", backgroundColor: "rgb(76, 172, 255)", margin: "0", height: "147px", lineHeight: "147px", width: "100%"}}>Timeline</p>
+            <div className="timelineContainer" >
+              <p className="timelineTitle" >Timeline</p>
               <Scrollbars style={{ height: "500px", width: "100%", backgroundColor: "white", flexGrow: "3" }}>
                 {Lessons.renderTimeline()}
               </Scrollbars>
