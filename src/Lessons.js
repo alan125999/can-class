@@ -84,8 +84,9 @@ class Lessons extends React.Component {
       Component={withMultipleDates(Calendar)}
       selected={time}
       interpolateSelection={this.myMultipleDateInterpolation}
-      width={600}
+      width={"70%"}
       height={500}
+      rowHeight={100}
       className="myCal"
       min={this.list[0].time}
       max={this.list[this.list.length - 1].time}
@@ -93,13 +94,12 @@ class Lessons extends React.Component {
       maxDate={this.list[this.list.length - 1].time}
       theme={{
         selectionColor: date => {
-          let dateObj = date.split('-');
-          dateObj = new Date(dateObj[0], dateObj[1] - 1, dateObj[2]);
+          let dateObj = date.toString().split('-');
+          dateObj = new Date(dateObj[0], dateObj[1] - 1, dateObj[2],23, 59);
           let now = new Date();
           if (dateObj < now) return "gray";
           return this.lessonColor(finalTime.includes(date));
         },
-        
       }}
     />);
   };
