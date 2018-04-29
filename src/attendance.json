@@ -27,15 +27,6 @@
     ]
   },
   {
-    "name": "fwp",
-    "attend": [
-      [false, false, false],
-      [false, false, false],
-      [false, false, false],
-      [false, false, false]
-    ]
-  },
-  {
     "name": "iris",
     "attend": [
       [false, false, false],

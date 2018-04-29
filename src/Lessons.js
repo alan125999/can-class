@@ -85,7 +85,7 @@ class Lessons extends React.Component {
       selected={time}
       interpolateSelection={this.myMultipleDateInterpolation}
       width={"100%"}
-      height={500}
+      height={"auto"}
       rowHeight={100}
       className="myCal"
       min={this.list[0].time}

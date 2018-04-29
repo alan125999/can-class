@@ -49,6 +49,18 @@
   width: 100%;
 }
 
+.attendTitle{
+  font-size: 2.5em;
+  height: 147px;
+  line-height: 147px;
+  margin: 0;
+  color: white; 
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 6;
+}
+
 @media only screen and (max-width: 900px) {
   .wrapper{
     display: flex;
