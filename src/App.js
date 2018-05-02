@@ -37,6 +37,7 @@ eventList.sort((a, b) => {
 
 class App extends React.Component {
   render() {
+    let monthCount = eventList[eventList.length-1].time.getMonth() - eventList[0].time.getMonth() + 1
     return (
       <div className="App">
         <header className="App-header">
@@ -45,7 +46,7 @@ class App extends React.Component {
         </header>
         <article className="container" >
           <section className="wrapper">
-            <ClassCalender eventList={eventList} />
+            <ClassCalender eventList={eventList} monthCount={monthCount}/>
             <div className="timelineContainer" >
               <p className="timelineTitle" >Timeline</p>
               <Scrollbars style={{ height: "500px", width: "100%", backgroundColor: "white", flexGrow: "3" }}>
@@ -53,10 +54,10 @@ class App extends React.Component {
               </Scrollbars>
             </div>
           </section>
-          <section className="attend" style={{width: window.innerwidth}}>
-            <section className="attendTitle">
+          <section className="attend" >
+            {/* <section className="attendTitle">
               Attendance
-            </section>  
+            </section>   */}
             <AttendTable lectureTimeList={lectureTimeList} lectureList={LectureList} attendList={AttendList}/> 
           </section>
         </article>

@@ -30,6 +30,7 @@
 .wrapper{
   display: grid;
   grid-template-columns: 7fr 3fr;
+  z-index: 0;
 }
 
 .timelineContainer{

@@ -7,7 +7,7 @@ const styles = theme => ({
   root: {
     width: '100%',
     overflowX: 'auto',
-    height: "540px",
+    height: window.innerHeight
   },
   table: {
     minWidth: "1300px",
@@ -29,14 +29,17 @@ const styles = theme => ({
     padding: 0,
     margin: 0,
     borderWidth: 0,
-    height: "50px"
+    height: "50px",
+    position: "sticky",
+    top: "145px",
   },
   body: {
     fontSize: 14,
     textAlign: "center",
     padding: 0,
     margin: 0,
-    width: "100px"
+    width: "100px",
+    backgroundColor: "white",
   },
   id: {
     backgroundColor: "#222",
@@ -48,16 +51,32 @@ const styles = theme => ({
     padding: 0,
     margin: 0,
     borderWidth: 0,
+    top: "145px",
   },
-  sub:{
+  sub: {
     backgroundColor: "#222",
     color: theme.palette.common.white,
-
     textAlign: "center",
     padding: 0,
     margin: 0,
     borderWidth: 0,
-    height: "35px"
+    height: "35px",
+    position: "sticky",
+    top: "195px",
+  },
+  title: {
+    fontSize: "2.5em",
+    height: "147px",
+    lineHeight: "147px",
+    margin: 0,
+    color: "white",
+    backgroundColor: "black",
+    position: "sticky",
+    top: 0,
+    zIndex: 6,
+    borderWidth: 0,
+    textAlign: "center",
+    left: 0
   }
 });
 class AttendTable extends React.Component {
@@ -68,10 +87,12 @@ class AttendTable extends React.Component {
   render() {
     let title = [<TableCell rowSpan={2} className={this.props.classes.id}>ID</TableCell>];
     let subTitle = [];
+    let colCount = 1;
     for (let i = 0; i < this.props.lectureList.length; i++) {
-      title.push(<TableCell numeric colSpan={this.props.lectureList.length-1} className={this.props.classes.head}>{this.props.lectureList[i].name}</TableCell>);
+      title.push(<TableCell numeric colSpan={this.props.lectureList.length - 1} className={this.props.classes.head}>{this.props.lectureList[i].name}</TableCell>);
       for (let j = 0; j < this.props.lectureList[i].time.length; j++) {
-        subTitle.push(<TableCell numeric className={this.props.classes.sub}>{(j === this.props.lectureList[i].time.length -1)? '正課' : '驗課#' + (j+1)}</TableCell>);
+        colCount += this.props.lectureList[i].time.length;
+        subTitle.push(<TableCell numeric className={this.props.classes.sub}>{(j === this.props.lectureList[i].time.length - 1) ? '正課' : '驗課#' + (j + 1)}</TableCell>);
       }
     }
     title = <TableRow className={this.props.classes.head}>{title}</TableRow>;
@@ -90,6 +111,9 @@ class AttendTable extends React.Component {
 
     return (
       <div className={this.props.classes.root}>
+        <div colSpan={colCount} className={this.props.classes.title}>
+          Attendance
+        </div>
         <Table className={this.props.classes.table} height={500}>
           <TableHead>
             {title}
