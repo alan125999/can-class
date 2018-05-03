@@ -20,5 +20,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://www.cna.ccu.edu.tw/~alan125999/2018Spring/cnaLessons"
+  "homepage": "."
 }
