@@ -17,7 +17,8 @@ class ClassTimeline extends React.Component {
       >
         課程：{this.props.lectureList[lesson.id].name} <br />
         性質：{(lesson.isFinal === true ? "正課" : ("第 " + (lesson.order + 1) + " 次驗課"))} <br />
-        講師：{this.props.lectureList[lesson.id].lecturer}
+        講師：{this.props.lectureList[lesson.id].lecturer} <br/>
+        地點：{(lesson.isFinal === true ? this.props.lectureList[lesson.id].place : "CBB")}
       </TimelineEvent>;
     });
     return (
